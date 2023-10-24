@@ -44,7 +44,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 194);
+            this.textBox1.Location = new System.Drawing.Point(36, 225);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(181, 22);
             this.textBox1.TabIndex = 1;
@@ -52,7 +52,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(34, 134);
+            this.textBox2.Location = new System.Drawing.Point(34, 165);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(181, 22);
             this.textBox2.TabIndex = 2;
@@ -65,7 +65,7 @@
             "gmail",
             "yahoo",
             "outlook"});
-            this.comboBox1.Location = new System.Drawing.Point(34, 73);
+            this.comboBox1.Location = new System.Drawing.Point(34, 83);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(94, 24);
             this.comboBox1.TabIndex = 3;
@@ -83,7 +83,7 @@
             // emailAddress
             // 
             this.emailAddress.AutoSize = true;
-            this.emailAddress.Location = new System.Drawing.Point(31, 115);
+            this.emailAddress.Location = new System.Drawing.Point(33, 126);
             this.emailAddress.Name = "emailAddress";
             this.emailAddress.Size = new System.Drawing.Size(95, 16);
             this.emailAddress.TabIndex = 5;
@@ -92,7 +92,7 @@
             // password
             // 
             this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(33, 175);
+            this.password.Location = new System.Drawing.Point(33, 206);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(67, 16);
             this.password.TabIndex = 6;
@@ -102,7 +102,7 @@
             // authentication
             // 
             this.authentication.AutoSize = true;
-            this.authentication.Location = new System.Drawing.Point(182, 73);
+            this.authentication.Location = new System.Drawing.Point(182, 83);
             this.authentication.Name = "authentication";
             this.authentication.Size = new System.Drawing.Size(176, 16);
             this.authentication.TabIndex = 7;
@@ -113,7 +113,7 @@
             // appPassword
             // 
             this.appPassword.AutoSize = true;
-            this.appPassword.Location = new System.Drawing.Point(182, 100);
+            this.appPassword.Location = new System.Drawing.Point(182, 115);
             this.appPassword.Name = "appPassword";
             this.appPassword.Size = new System.Drawing.Size(217, 16);
             this.appPassword.TabIndex = 8;
@@ -124,7 +124,7 @@
             // gmailLabel
             // 
             this.gmailLabel.AutoSize = true;
-            this.gmailLabel.Location = new System.Drawing.Point(182, 44);
+            this.gmailLabel.Location = new System.Drawing.Point(182, 54);
             this.gmailLabel.Name = "gmailLabel";
             this.gmailLabel.Size = new System.Drawing.Size(127, 16);
             this.gmailLabel.TabIndex = 9;
@@ -137,7 +137,7 @@
             // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(36, 251);
+            this.close.Location = new System.Drawing.Point(36, 282);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(94, 29);
             this.close.TabIndex = 12;
@@ -147,11 +147,11 @@
             // 
             // send
             // 
-            this.send.Location = new System.Drawing.Point(34, 222);
+            this.send.Location = new System.Drawing.Point(36, 253);
             this.send.Name = "send";
             this.send.Size = new System.Drawing.Size(94, 23);
             this.send.TabIndex = 13;
-            this.send.Text = "Send Test";
+            this.send.Text = "Send";
             this.send.UseVisualStyleBackColor = true;
             this.send.Click += new System.EventHandler(this.send_Click);
             // 
@@ -159,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 302);
+            this.ClientSize = new System.Drawing.Size(414, 355);
             this.Controls.Add(this.send);
             this.Controls.Add(this.close);
             this.Controls.Add(this.gmailLabel);
