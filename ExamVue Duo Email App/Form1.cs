@@ -14,6 +14,9 @@ using System.Runtime.Remoting.Messaging;
 using MailKit.Net.Smtp;
 using MimeKit;
 using MimeKit.Text;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
+using System.IO;
+
 
 namespace ExamVue_Duo_Email_App
 {
@@ -21,7 +24,10 @@ namespace ExamVue_Duo_Email_App
     {
         string emailAddressText;
         string emailAddressPassword;
+        string emailAddressSend;
         string smtpServer;
+        string filePath;
+
         int smtpPort;
 
         public Form1()
@@ -63,6 +69,23 @@ namespace ExamVue_Duo_Email_App
                     break;
             }
         }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filePath = openFileDialog1.FileName;
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            emailAddressSend = textBox3.Text;
+        }
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
@@ -97,13 +120,19 @@ namespace ExamVue_Duo_Email_App
         {
             var email = new MimeMessage();
             email.From.Add(MailboxAddress.Parse(emailAddressText));
-            email.To.Add(MailboxAddress.Parse("brandon.chin@jpihealthcare.com"));
+            email.To.Add(MailboxAddress.Parse(emailAddressSend));
             email.Subject = "Test Email Subject";
-            email.Body = new TextPart(TextFormat.Html) { Text = "<h1>Example HTML Message Body</h1>" };
+
+            var builder = new BodyBuilder();
+
+            builder.TextBody = @"TEST JPI EMAIL - ABC";
+            builder.Attachments.Add(filePath);
+
+            email.Body = builder.ToMessageBody();
 
             using (var client = new SmtpClient())
             {
-                client.Connect(smtpServer, smtpPort, SecureSocketOptions.StartTlsWhenAvailable);
+                client.Connect(smtpServer, smtpPort, SecureSocketOptions.None);
                 client.Authenticate(emailAddressText, emailAddressPassword);
                 client.Send(email);
                 client.Disconnect(true);
