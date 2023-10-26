@@ -58,12 +58,6 @@ namespace ExamVue_Duo_Email_App
 
                 case 1:
                     //Set up yahoo smtp
-                    smtpServer = "smtp.mail.yahoo.com";
-                    smtpPort = 587;
-                    break;
-
-                case 2:
-                    //Set up outlook smtp
                     smtpServer = "smtp-mail.outlook.com";
                     smtpPort = 587;
                     break;
@@ -132,7 +126,7 @@ namespace ExamVue_Duo_Email_App
 
             using (var client = new SmtpClient())
             {
-                client.Connect(smtpServer, smtpPort, SecureSocketOptions.None);
+                client.Connect(smtpServer, smtpPort, SecureSocketOptions.StartTlsWhenAvailable);
                 client.Authenticate(emailAddressText, emailAddressPassword);
                 client.Send(email);
                 client.Disconnect(true);
