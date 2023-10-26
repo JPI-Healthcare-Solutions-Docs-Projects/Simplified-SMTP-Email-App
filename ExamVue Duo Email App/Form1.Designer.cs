@@ -40,11 +40,14 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.close = new System.Windows.Forms.Button();
             this.send = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 225);
+            this.textBox1.Location = new System.Drawing.Point(34, 150);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(181, 22);
             this.textBox1.TabIndex = 1;
@@ -53,7 +56,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(34, 165);
+            this.textBox2.Location = new System.Drawing.Point(34, 91);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(181, 22);
             this.textBox2.TabIndex = 2;
@@ -66,7 +69,7 @@
             "gmail",
             "yahoo",
             "outlook"});
-            this.comboBox1.Location = new System.Drawing.Point(34, 83);
+            this.comboBox1.Location = new System.Drawing.Point(34, 28);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(94, 24);
             this.comboBox1.TabIndex = 3;
@@ -75,7 +78,7 @@
             // emailProvider
             // 
             this.emailProvider.AutoSize = true;
-            this.emailProvider.Location = new System.Drawing.Point(33, 54);
+            this.emailProvider.Location = new System.Drawing.Point(35, 9);
             this.emailProvider.Name = "emailProvider";
             this.emailProvider.Size = new System.Drawing.Size(95, 16);
             this.emailProvider.TabIndex = 4;
@@ -84,7 +87,7 @@
             // emailAddress
             // 
             this.emailAddress.AutoSize = true;
-            this.emailAddress.Location = new System.Drawing.Point(33, 126);
+            this.emailAddress.Location = new System.Drawing.Point(31, 70);
             this.emailAddress.Name = "emailAddress";
             this.emailAddress.Size = new System.Drawing.Size(95, 16);
             this.emailAddress.TabIndex = 5;
@@ -93,7 +96,7 @@
             // password
             // 
             this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(33, 206);
+            this.password.Location = new System.Drawing.Point(35, 131);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(67, 16);
             this.password.TabIndex = 6;
@@ -103,7 +106,7 @@
             // authentication
             // 
             this.authentication.AutoSize = true;
-            this.authentication.Location = new System.Drawing.Point(182, 83);
+            this.authentication.Location = new System.Drawing.Point(211, 31);
             this.authentication.Name = "authentication";
             this.authentication.Size = new System.Drawing.Size(176, 16);
             this.authentication.TabIndex = 7;
@@ -114,7 +117,7 @@
             // appPassword
             // 
             this.appPassword.AutoSize = true;
-            this.appPassword.Location = new System.Drawing.Point(182, 115);
+            this.appPassword.Location = new System.Drawing.Point(170, 52);
             this.appPassword.Name = "appPassword";
             this.appPassword.Size = new System.Drawing.Size(217, 16);
             this.appPassword.TabIndex = 8;
@@ -125,7 +128,7 @@
             // gmailLabel
             // 
             this.gmailLabel.AutoSize = true;
-            this.gmailLabel.Location = new System.Drawing.Point(182, 54);
+            this.gmailLabel.Location = new System.Drawing.Point(260, 9);
             this.gmailLabel.Name = "gmailLabel";
             this.gmailLabel.Size = new System.Drawing.Size(127, 16);
             this.gmailLabel.TabIndex = 9;
@@ -138,7 +141,7 @@
             // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(36, 282);
+            this.close.Location = new System.Drawing.Point(32, 300);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(94, 29);
             this.close.TabIndex = 12;
@@ -148,7 +151,7 @@
             // 
             // send
             // 
-            this.send.Location = new System.Drawing.Point(36, 253);
+            this.send.Location = new System.Drawing.Point(32, 271);
             this.send.Name = "send";
             this.send.Size = new System.Drawing.Size(94, 23);
             this.send.TabIndex = 13;
@@ -156,11 +159,42 @@
             this.send.UseVisualStyleBackColor = true;
             this.send.Click += new System.EventHandler(this.send_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(34, 208);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(181, 22);
+            this.textBox3.TabIndex = 14;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 189);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(153, 16);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Send To Email Address:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(34, 236);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 29);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Attachment";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 355);
+            this.ClientSize = new System.Drawing.Size(413, 338);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.send);
             this.Controls.Add(this.close);
             this.Controls.Add(this.gmailLabel);
@@ -192,6 +226,9 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button close;
         private System.Windows.Forms.Button send;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
