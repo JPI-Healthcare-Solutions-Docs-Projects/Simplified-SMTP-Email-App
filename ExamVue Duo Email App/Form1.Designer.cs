@@ -67,7 +67,6 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "gmail",
-            "yahoo",
             "outlook"});
             this.comboBox1.Location = new System.Drawing.Point(34, 28);
             this.comboBox1.Name = "comboBox1";
