@@ -27,25 +27,25 @@ namespace ExamVue_Duo_Email_App
         string emailAddressSend;
         string smtpServer;
         string filePath;
-
         int smtpPort;
 
         public Form1()
         {
             InitializeComponent();
+            gmailBox.Visible = false;  
+            emailBox.Visible = false;
+            functionEmail.Visible = false;
         }
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        //Linked Labels
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            emailAddressText = textBox2.Text;
+            Process.Start("https://security.google.com/settings/security/signinoptions/two-step-verification");
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            emailAddressPassword = textBox1.Text;
+            Process.Start("https://security.google.com/settings/security/apppasswords");
         }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+        // ComboBox Dropdown for Email Provider
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBox1.SelectedIndex)
@@ -54,20 +54,44 @@ namespace ExamVue_Duo_Email_App
                     //Set up gmail smtp
                     smtpServer = "smtp.gmail.com";
                     smtpPort = 587;
+                    gmailBox.Visible = true;
+                    textBox1.Hide();
+                    password.Hide();
                     break;
 
                 case 1:
                     //Set up yahoo smtp
                     smtpServer = "smtp-mail.outlook.com";
                     smtpPort = 587;
+                    emailBox.Visible = true;
+                    functionEmail.Visible = true;
                     break;
             }
         }
-        private void label1_Click(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            emailAddressText = textBox2.Text;
         }
-
+        //GMAIL 2FA and App Password Requirement
+        private void appPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://security.google.com/settings/security/apppasswords");
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            gmailBox.Visible=false;
+            emailBox.Visible = true;
+            functionEmail.Visible = true;
+        }
+        //Input and attachment
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            emailAddressPassword = textBox1.Text;
+        }
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            emailAddressPassword = textBox4.Text;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -75,14 +99,9 @@ namespace ExamVue_Duo_Email_App
                 filePath = openFileDialog1.FileName;
             }
         }
-
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             emailAddressSend = textBox3.Text;
-        }
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
         }
         private void Attachment_Click(object sender, EventArgs e)
         {
@@ -92,23 +111,11 @@ namespace ExamVue_Duo_Email_App
                 Console.WriteLine(y);
             }
         }
-        //GMAIL 2FA and App Password Requirement
-        private void authentication_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("https://security.google.com/settings/security/signinoptions/two-step-verification");
-        }
-
-        private void appPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("https://security.google.com/settings/security/apppasswords");
-        }
-
         //Close app
         private void close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         //SMTP Server request
         private void send_Click(object sender, EventArgs e)
         {
@@ -132,5 +139,6 @@ namespace ExamVue_Duo_Email_App
                 client.Disconnect(true);
             }
         }
+
     }
 }
