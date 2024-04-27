@@ -24,3 +24,25 @@
 3. Add the repostory web URL:
 
 https://github.com/chitangchin/Simplified-SMTP-Email-App.git
+
+4. Once project is cloned successfully right click on ExamVue Duo Email App
+- Click on Properties
+
+![image](https://github.com/chitangchin/Simplified-SMTP-Email-App/assets/96362668/68fa10c4-488c-4b02-bd3c-5ed854495537)
+
+5. Goto Signing Tab
+
+![image](https://github.com/chitangchin/Simplified-SMTP-Email-App/assets/96362668/c50c9fa4-500a-4815-951e-53a2bbde9171)
+
+6. Uncheck Sign the ClickOnce Manifest
+
+![image](https://github.com/chitangchin/Simplified-SMTP-Email-App/assets/96362668/da7382f6-7fb6-45a4-985a-7264dbb57b60)
+
+7. Press Ctrl + B
+- This builds the application
+
+8. Click the start button
+
+![image](https://github.com/chitangchin/Simplified-SMTP-Email-App/assets/96362668/4b86ce08-2be8-445e-85af-110eaa834a8e)
+
+### You are now ready to test out the simplified email function via Mimekit
