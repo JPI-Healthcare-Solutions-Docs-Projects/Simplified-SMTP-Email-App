@@ -12,3 +12,11 @@
 - Click Install
 
 ![image](https://github.com/chitangchin/Email-App/assets/96362668/f972a7a7-0ff7-4772-b316-f971ca0f3171)
+
+
+## Steps to start the app
+
+1. Open Visual Studio 20xx
+2. Click Clone a repository
+
+![image](https://github.com/chitangchin/Simplified-SMTP-Email-App/assets/96362668/87a9535a-5a09-45d3-aafe-de7b5f453ece)
